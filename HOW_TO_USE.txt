@@ -1,0 +1,54 @@
+HOW TO USE: audio-key-bpm-analyzer
+==================================
+
+PURPOSE
+  Extract instantaneous musical intelligence from any local audio file:
+  Musical Key & Scale, Camelot Wheel DJ code, Relative Key, BPM (tempo),
+  Pitch Range (min/max note & span), and tuning calibration without cloud APIs.
+
+CAPABILITIES
+  - Key & Scale Detection: Krumhansl-Schmuckler chroma correlation with confidence score
+  - Camelot Wheel Mapping: standard DJ mixing code (e.g. 8A for A Minor, 8B for C Major)
+  - Tempo & Beat Tracking: dynamic programming BPM estimation
+  - Pitch Range Analysis: lowest note, highest note, semitone range span, and note count
+  - Microtonal Tuning Calibration: detects base tuning frequency (e.g. 440 Hz vs 432 Hz)
+  - Windows Explorer Context Menu: right-click any audio file directly in Explorer to analyze
+  - JSON Output Support: machine-readable JSON output for automated music pipelines
+
+USE CASES
+  - "What key and BPM is this sample: C:\Samples\vocal_riff.wav?"
+  - "Check the Camelot code and tempo for DJ harmonic mixing."
+  - "Find the pitch range of this singer's recorded vocal stem."
+  - "Check if this vintage track is tuned to 440Hz or 432Hz."
+  - "Right-click analyze audio files from Windows Explorer."
+
+IDEAS
+  - Pair with Ableton Live: verify the original tempo before setting audio warp markers.
+  - Pair with DJ Sets: match Camelot numbers (e.g. 8A -> 9A or 8B) for flawless harmonic key mixing.
+  - Pair with vocal-to-synth-lead: determine vocal range bounds before transcribing melodies.
+  - Install context menu: run install_context_menu.ps1 once to analyze right from your desktop or folder.
+
+PROMPTS YOU CAN PASTE
+  /audio-key-bpm-analyzer "C:\Music\sample.wav"
+
+  Analyze the key, scale, and BPM of "C:\Samples\bass_loop.wav"
+
+  What is the Camelot code, tempo, and vocal pitch range of "D:\Vocals\chorus_lead.mp3"?
+
+  Run audio key analysis on "C:\Audio\track.flac" and give me the JSON output.
+
+EXAMPLE FLOW
+  You:   /audio-key-bpm-analyzer "C:\Music\intro_melody.wav"
+  Model: Running musical intelligence analysis...
+         🎵 Key & Scale:      D Minor (Confidence: 89.4%)
+         🎡 Camelot Code:     7A
+         🔄 Relative Key:     F Major (7B)
+         ⏱️  Tempo:            124.0 BPM
+         🎤 Pitch Range:      D3 to G5 (29 semitones)
+         🎯 Tuning:           440.0 Hz (Standard Concert Pitch)
+
+DEFAULT GOALS IF YOU DON'T NAME ONE
+  1. Extract Key, Scale, Camelot code, and BPM
+  2. Measure pitch range (lowest note, highest note, semitone span)
+  3. Detect tuning calibration reference frequency
+  4. Display results in a clean, high-visibility terminal summary card
